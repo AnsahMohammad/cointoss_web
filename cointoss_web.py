@@ -9,7 +9,7 @@ global coins
 global trial
 
 #web app UI 
-st.header(" ## Coin Toss experiment")
+st.header(" Coin Toss experiment")
 
 #getting the input from the user
 coins = st.slider("number of coins you're using",1,100,12)
