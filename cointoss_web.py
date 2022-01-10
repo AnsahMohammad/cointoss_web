@@ -43,8 +43,8 @@ def counter():
 
 theor_freq =[]
 
+#calculating theoretical values
 def theorotical(N,n):
-  #hello
   for r in range(n):
     theor_freq.append( (N* factorial(n))  / ( (factorial(n-r) * factorial(r) ) * (2**n) ))
 
@@ -81,7 +81,7 @@ if button:
   plt.plot(x,y)
   plt.plot(x_thear,y_thear)
 
-  plt.legend(['Generated Random distribution','Theoretical Random distribution'], loc = 'lower right')
+  plt.legend(['Generated Random distribution','Theoretical Random distribution'], loc = 'upper right')
   #saving graph as a figure
   
   plt.savefig("output.jpg")
