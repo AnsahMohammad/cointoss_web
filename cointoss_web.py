@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
 from PIL import Image
+from math import factorial
 
 #creating a variable for number of coins
 global coins
@@ -40,13 +41,20 @@ def counter():
 
     val = []        
 
+theor_freq =[]
 
+def theorotical(N,n):
+  #hello
+  for r in range(n):
+    theor_freq.append( (N* factorial(n))  / ( (factorial(n-r) * factorial(r) ) * (2**n) ))
 
 
 def start():
   for i in range(trial):
     tosser()
     counter()
+
+  theorotical(trial,coins)  
 
 button = st.button("show graph")
 
@@ -66,11 +74,17 @@ if button:
   plt.xlabel("values")
   plt.ylabel("freaquency")
 
+  #graph variables defining
+  x_thear = [i for i in range(coins)]
+  y_thear = theor_freq
+
   plt.plot(x,y)
+  plt.plot(x_thear,y_thear)
+
+  plt.legend(['Generated Random distribution','Theoretical Random distribution'], loc = 'lower right')
   #saving graph as a figure
   
   plt.savefig("output.jpg")
   image = Image.open('output.jpg')
   st.image(image, caption = 'freaquency distribution', use_column_width = True)
 
-#plt.plot(x,y)
