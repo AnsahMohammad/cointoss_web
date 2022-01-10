@@ -81,7 +81,8 @@ if button:
   plt.plot(x,y)
   plt.plot(x_thear,y_thear)
 
-  plt.legend(['Generated Random distribution','Theoretical Random distribution'], loc = 'upper right')
+  plt.legend(['Generated distribution','Theoretical distribution'], loc = 'upper left')
+
   #saving graph as a figure
   
   plt.savefig("output.jpg")
