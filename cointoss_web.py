@@ -11,11 +11,11 @@ global coins
 global trial
 
 #web app UI 
-st.header(" Coin Toss experiment")
+st.header("Coin Toss Experiment")
 
 #getting the input from the user
-coins = st.slider("number of coins you're using",1,100,12)
-trial = st.slider("number of trials:",1,10000,400)
+coins = st.slider(" number of coins you're using",1,100,12)
+trial = st.slider(" number of trials:",1,10000,400)
 
 
 # to store random values
@@ -118,3 +118,6 @@ if button:
 
   st.write(" ## Random Distribution Graph")
   st.image(image, caption = 'freaquency distribution', use_column_width = True)
+
+  end_note = "\n"*10 + "Made with ❤️ \n ~'SVIT-CODING-FANATICS'"
+  st.write(end_note)
